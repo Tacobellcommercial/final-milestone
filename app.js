@@ -62,7 +62,7 @@ app.post("/contact", async (req, res)=>{
     const newContactInfo = new Contact({
         name: req.body.name,
         email: req.body.email,
-        text: req.body.text_content
+        text_content: req.body.text_content
     })
 
     await newContactInfo.save();
