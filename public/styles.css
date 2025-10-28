@@ -1,0 +1,177 @@
+/*
+1A2A4F navy blue
+F7A5A5 pink
+FFDBB6 peach
+FFF2EF gray
+*/
+
+.home{
+    padding: 15% 7%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("header_image.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.navbar-nav{
+    text-align: center;
+    margin-left: auto;
+    margin-right: 15%;
+}
+
+.navbar{
+    background-color: #1A2A4F !important;
+    z-index: 11;
+}
+
+.navbar .navbar-nav .nav-item .nav-link{
+    color: #FFDBB6 !important;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.navbar-brand{
+    color: #FFDBB6 !important;
+}
+
+
+.home h1{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.home p{
+    color: white;
+    font-family: "Roboto Mono", sans-serif;
+}
+
+.home a{
+    font-family: "Ubuntu", sans-serif;
+}
+
+/*cart*/
+
+.cart-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.5);
+    z-index: 10;
+    display: none;
+}
+
+.cart-content{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 300px;
+    background-color: white;
+    overflow-y: auto;
+    max-height: 25rem;
+}
+
+.cart-items .cart-item h2{
+    font-size: 1.5rem;
+}
+
+.cart-overlay h2{
+    font-size: 2.5rem;
+}
+
+/*features*/
+
+.features{
+    padding: 5%;
+    text-align: center;
+}
+
+.features h1{
+    margin-bottom: 2.5rem;
+    color: #1A2A4F;
+}
+.feature-item{
+    width: 30%;
+    display: inline-grid;
+    color: #F7A5A5;
+}
+
+.feature-item h2{
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+}
+
+/*gallery*/
+
+
+.book-item{
+    width: 30%;
+    display: inline-grid;
+    background-color: #FFF2EF;
+    border-radius: 15px;
+    color: #1A2A4F;
+    padding: 2.5%;
+
+}
+
+.booklist{
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.book-item{
+    display: inline-grid;
+    margin-bottom: 1rem;
+
+}
+
+.book-item h2{
+    font-size: 1.5rem;
+}
+
+.book-item button{
+    font-size: 1.25rem;
+}
+
+
+/*contact*/
+
+.contact form{
+    text-align: center;
+}
+
+.contact h1{
+    text-align: center;
+}
+
+.contact form input{
+    padding: 1%;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.contact button{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*about*/
+
+.about{
+    text-align: center;
+    padding: 7% 15%;
+}
+
+.about h1{
+    font-size: 2.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+}
+
+.about p{
+    font-size: 1.25rem;
+    font-family: "Ubuntu", sans-serif;
+}

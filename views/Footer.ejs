@@ -1,0 +1,80 @@
+       
+
+        <div class="cart-overlay" style="display: none;">
+            <div class="cart-content">
+                <h2>Your Cart</h2>
+
+                <div class="cart-items">
+
+                </div>
+
+                <button class="btn btn-primary" id="clear-cart-button">Clear Cart</button>
+                <button class="btn btn-primary" id="process-order-button">Process Order</button>
+
+            </div>
+        </div>
+       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+        <script>
+            const cartOverlay = document.querySelector(".cart-overlay");
+            const cartButton = document.querySelector("#cart-button");
+            cartButton.addEventListener("click", async ()=>{
+                if (cartOverlay.style.display == "none" || cartOverlay.style.display == ""){
+                    cartOverlay.style.display = "block";
+                    addCartItems();
+                }else{
+                    cartOverlay.style.display = "none";
+                }
+            })
+
+            const clear_cart_button = document.querySelector("#clear-cart-button");
+            const process_order_button = document.querySelector("#process-order-button");
+
+
+            clear_cart_button.addEventListener("click", ()=>{
+                const cartItemsContainer = document.querySelector(".cart-items");
+                cartItemsContainer.innerHTML = "";
+                sessionStorage.clear();
+                alert("Cleared cart!");
+            })
+
+            process_order_button.addEventListener("click", ()=>{
+                const cartItemsContainer = document.querySelector(".cart-items");
+                cartItemsContainer.innerHTML = "";
+                sessionStorage.clear();
+                alert("Order processed!")
+            })
+
+            function addCartItems(){
+                const cartItems = JSON.parse(sessionStorage.getItem("cart")) || [];
+                const cartItemsContainer = document.querySelector(".cart-items");
+                cartItemsContainer.innerHTML = "";
+
+                cartItems.forEach(e=>{
+                    console.log(e);
+                    const singleItemDiv = document.createElement("div");
+                    singleItemDiv.classList.add("cart-item");
+
+                    const itemName = document.createElement("h2");
+                    itemName.textContent = e.name;
+
+                    const author = document.createElement("p");
+                    author.textContent = e.author;
+
+                    const pages = document.createElement("p");
+                    pages.textContent = "Pages: " + e.pages;
+
+                    singleItemDiv.appendChild(itemName);
+                    singleItemDiv.appendChild(author);
+                    singleItemDiv.appendChild(pages);
+
+                    cartItemsContainer.appendChild(singleItemDiv);
+                })
+                
+            }   
+        </script>   
+
+    </body>
+</html>

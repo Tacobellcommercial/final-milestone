@@ -1,0 +1,23 @@
+<%- include("Header") -%>
+
+<div class="contact">
+    <h1>Contact below</h1>
+
+    <form method="post" action="/contact">
+        <h2>Name</h2>
+        <input type="text" name="name"/>
+
+        <h2 type="email">Email</h2>
+        <input name="email"/>
+
+        <h2>Write here</h2>
+        <textarea type="text" name="text_content">
+
+        </textarea>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+        
+</div>
+
+<%- include("Footer") -%>

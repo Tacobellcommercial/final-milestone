@@ -1,0 +1,43 @@
+<%- include("Header") -%>
+
+<h1 style="text-align: center;">Book Gallery</h1>
+<p style="text-align: center;">Pick from our wide range of selections of books.</p>
+<div class="booklist">
+    <%bookList.forEach(e=>{%>
+        <div class="book-item">
+            <h2><%=e.name%></h2>
+            <p><%=e.author%></p>
+            <p><%=e.pages%></p>
+            <button data-id="<%=e._id%>" class="book-cart-add btn btn-outline-primary">Add to Cart</button>
+        </div>
+    <%})%>
+</div>
+
+<script>
+
+    const addToCartButtons = document.querySelectorAll(".book-cart-add");
+        addToCartButtons.forEach(e=>{
+            e.addEventListener("click", async ()=>{
+                const mongoId = e.getAttribute("data-id")
+                console.log(mongoId);
+                const getBookData = await fetch("/get-cart-item",{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({mongoId:mongoId})
+                })
+
+                const bookData = await getBookData.json();
+                
+                console.log(bookData);
+
+                const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+                cart.push(bookData);
+
+                sessionStorage.setItem("cart", JSON.stringify(cart));
+            })
+
+        })
+</script>
+<%- include("Footer") -%>
