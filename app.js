@@ -17,7 +17,7 @@ const BookList = mongoose.model('Booklist', bookListSchema);
 const contactSchema = new mongoose.Schema({
     name: String,
     email: String,
-    text_content: Number
+    text_content: String
 })
 
 const Contact = mongoose.model("Contact", contactSchema);
