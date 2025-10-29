@@ -4,7 +4,7 @@
     <h1>Book Haven Bookstore</h1>
     <p>The only books you'll ever need.</p>
     <a href="/gallery" class="btn btn-primary">Gallery</a>
-    <a href="/subscribe" class="btn btn-outline-primary">Subscribe</a>
+    <a href="/subscribe" class="btn btn-outline-primary subscribe-button">Subscribe</a>
 
 </div>
 
@@ -25,4 +25,10 @@
     </div>
 </div>
 
+<script>
+    const subscribeButton = document.querySelector(".subscribe-button");
+    susbcribeButton.addEventListener("click", ()=>{
+        alert("You are now subscribed!");
+    })
+</script>
 <%- include("Footer") -%>
